@@ -1,0 +1,688 @@
+/* VARIABLES DE DISEÑO PREMIUM */
+:root {
+    --bg-deep: #0A0A0A;
+    --neon-violet: #A020F0;
+    --dark-purple: #4B0082;
+    --bright-purple: #C77DFF;
+    --electric-blue: #6A5ACD;
+    --text-main: #E0E0E3;
+    --text-muted: #A0A0AA;
+    --font-gamer: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* CONTENEDORES GLOBALES */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-padding {
+    padding: 6rem 0 3rem 0;
+}
+
+.section-title {
+    font-family: var(--font-gamer);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    color: #fff;
+    text-shadow: 0 0 15px var(--neon-violet);
+    border-left: 5px solid var(--bright-purple);
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* HERO / HEADER ADAPTADO (LOGO AGRANDADO Y MEJOR DISTRIBUCIÓN DE ESPACIOS) */
+.hero {
+    min-height: 65vh; /* Ajustado de 75vh para reducir espacio vacío vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle at center, var(--dark-purple) -50%, var(--bg-deep) 70%);
+    border-bottom: 2px solid rgba(160, 32, 240, 0.2);
+    padding: 4rem 1rem 3rem 1rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Contenedor del Logo */
+.hero-logo-container {
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 25px rgba(160, 32, 240, 0.7));
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+.hero-logo {
+    max-width: 480px; /* Agrandado de 320px para ocupar el espacio vacío de forma imponente */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.neon-title {
+    font-family: var(--font-gamer);
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    animation: pulseGlow 3s infinite alternate;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    color: var(--bright-purple);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(199, 125, 255, 0.4);
+}
+
+/* NAVBAR FIJO */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(160, 32, 240, 0.3);
+    z-index: 1000;
+    transition: var(--transition-smooth);
+}
+
+.navbar.sticky-active {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 1px 15px rgba(160, 32, 240, 0.2);
+    border-bottom-color: var(--neon-violet);
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    font-family: var(--font-gamer);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-logo span {
+    color: var(--neon-violet);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: var(--font-gamer);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fff;
+    background: rgba(160, 32, 240, 0.15);
+    box-shadow: inset 0 0 10px rgba(160, 32, 240, 0.3), 0 0 10px rgba(160, 32, 240, 0.2);
+}
+
+/* SECCIÓN 1: GRID DE COMANDOS */
+.grid-commands {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-command {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.card-command::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.card-command:hover {
+    transform: translateY(-5px);
+    border-color: var(--electric-blue);
+    box-shadow: 0 8px 25px rgba(106, 90, 205, 0.15);
+}
+
+.card-command:hover::before {
+    transform: translateX(100%);
+}
+
+.cmd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cmd-name {
+    font-family: var(--font-gamer);
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 700;
+    background: rgba(106, 90, 205, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(106, 90, 205, 0.2);
+}
+
+.cmd-header i {
+    color: var(--bright-purple);
+    font-size: 1.2rem;
+}
+
+.cmd-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* SECCIÓN 2: WARPS Y MUNDOS */
+.grid-warps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+@media(max-width: 600px){
+    .grid-warps { grid-template-columns: 1fr; }
+}
+
+.card-warp {
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(199, 125, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.card-warp:hover {
+    border-color: var(--bright-purple);
+    box-shadow: 0 10px 30px rgba(199, 125, 255, 0.1);
+    transform: scale(1.01);
+}
+
+.warp-img-wrapper {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* AJUSTADO: Se añade un pequeño padding y overflow hidden para contener la animación */
+.warp-placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+/* Corrección para que las imágenes ocupen todo el ancho */
+.warp-placeholder-img {
+    padding: 0; /* Quitamos cualquier espacio interno */
+}
+
+.warp-placeholder-img i {
+    width: 100%;
+    height: 100%;
+    display: block; /* Cambiamos a block para que ocupe todo el espacio */
+}
+
+.warp-placeholder-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que cubra todo el ancho, recortando un poco el alto si es necesario sin deformarse */
+    display: block;
+}
+
+
+/* NUEVO: Reglas para adaptar las imágenes de forma fluida y proporcional */
+.warp-placeholder-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.card-warp:hover .warp-placeholder-img img {
+    transform: scale(1.08);
+}
+
+.warp-body {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-warp h3 {
+    font-family: var(--font-gamer);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.warp-tags {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.warp-tags li {
+    background: rgba(255,255,255,0.03);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.warp-tags li i {
+    margin-right: 0.5rem;
+    color: var(--electric-blue);
+}
+
+.warp-highlight {
+    margin-top: auto;
+    background: rgba(160, 32, 240, 0.08);
+    border-left: 3px solid var(--neon-violet);
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.tops-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tops-grid span {
+    font-size: 0.9rem;
+    background: rgba(106, 90, 205, 0.05);
+    padding: 0.4rem;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid rgba(106, 90, 205, 0.1);
+}
+
+/* SECCIÓN 3: ARMADURAS ESPECIALES */
+.grid-armors {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 2rem;
+}
+
+.card-armor {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.armor-img-box {
+    height: 240px;
+    background: #050505;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.armor-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-fallback {
+    display: none;
+    font-size: 4rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    transition: var(--transition-smooth);
+}
+
+.armor-info {
+    padding: 1.5rem;
+}
+
+.rarity {
+    font-family: var(--font-gamer);
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.card-armor h3 {
+    font-family: var(--font-gamer);
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.obtencion {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* CONFIGURACIONES POR TIERS */
+.legendaria { background: #E67E22; color: #fff; }
+.tier-dragon:hover { border-color: #E67E22; box-shadow: 0 10px 25px rgba(230, 126, 34, 0.25); }
+.tier-dragon:hover .img-fallback { color: #E67E22; opacity: 0.8; }
+
+.mitica { background: #3498DB; color: #fff; }
+.tier-hielo:hover { border-color: #3498DB; box-shadow: 0 10px 25px rgba(52, 152, 218, 0.25); }
+.tier-hielo:hover .img-fallback { color: #3498DB; opacity: 0.8; }
+
+.ancestral { background: #E74C3C; color: #fff; }
+.tier-molten:hover { border-color: #E74C3C; box-shadow: 0 10px 25px rgba(231, 76, 60, 0.25); }
+.tier-molten:hover .img-fallback { color: #E74C3C; opacity: 0.8; }
+
+.divina { background: #9B59B6; color: #fff; }
+.tier-sakura:hover { border-color: #9B59B6; box-shadow: 0 10px 25px rgba(155, 89, 182, 0.25); }
+.tier-sakura:hover .img-fallback { color: #9B59B6; opacity: 0.8; }
+
+.celestial { background: #1ABC9C; color: #fff; }
+.tier-arruinado:hover { border-color: #1ABC9C; box-shadow: 0 10px 25px rgba(26, 188, 156, 0.25); }
+.tier-arruinado:hover .img-fallback { color: #1ABC9C; opacity: 0.8; }
+
+
+/* SECCIÓN 4: LÍNEA DE PROGRESIÓN FORGE */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--electric-blue), var(--neon-violet), var(--bright-purple));
+    top: 0; 
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 2rem;
+    clear: both;
+}
+
+.timeline-item:nth-child(odd) {
+    float: left;
+    padding-right: 45px; 
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    float: right;
+    padding-left: 45px; 
+    text-align: left;
+}
+
+.timeline-badge {
+    width: 44px;
+    height: 44px;
+    background: #111;
+    border: 2px solid var(--neon-violet);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: #fff;
+    box-shadow: 0 0 12px var(--neon-violet);
+}
+
+.timeline-item:nth-child(odd) .timeline-badge {
+    right: -22px; 
+}
+
+.timeline-item:nth-child(even) .timeline-badge {
+    left: -22px; 
+}
+
+.timeline-item.base .timeline-badge { border-color: #f1c40f; box-shadow: 0 0 10px #f1c40f; color: #f1c40f; }
+.timeline-item.max .timeline-badge { border-color: #e74c3c; box-shadow: 0 0 10px #e74c3c; color: #e74c3c; }
+
+.timeline-content {
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    transition: var(--transition-smooth);
+    display: inline-block;
+    width: 100%;
+    text-align: left; 
+}
+
+.timeline-content:hover {
+    border-color: rgba(160, 32, 240, 0.4);
+    box-shadow: 0 5px 20px rgba(160, 32, 240, 0.15);
+}
+
+.timeline-content h4 {
+    font-family: var(--font-gamer);
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .timeline::before { 
+        left: 20px; 
+    }
+    .timeline-item { 
+        width: 100%; 
+        float: none !important;
+        padding-left: 55px !important; 
+        padding-right: 0 !important;
+    }
+    .timeline-item:nth-child(odd) .timeline-badge,
+    .timeline-item:nth-child(even) .timeline-badge {
+        left: -2px;
+        right: auto;
+    }
+}
+
+/* INTERACTION & SYSTEM ELEMENTS */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: -60px;
+    width: 45px;
+    height: 45px;
+    background: var(--neon-violet);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 99;
+    transition: var(--transition-smooth);
+    box-shadow: 0 0 15px var(--neon-violet);
+}
+
+#back-to-top.visible {
+    right: 30px;
+}
+
+#back-to-top:hover {
+    background: var(--bright-purple);
+    transform: translateY(-3px);
+}
+
+/* APARICIÓN SCROLL REVEAL */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+.neon-footer {
+    background: #030303;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(160, 32, 240, 0.3);
+    box-shadow: 0 -10px 35px rgba(160, 32, 240, 0.05);
+}
+
+.footer-title {
+    font-family: var(--font-gamer);
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--neon-violet);
+    margin-bottom: 0.5rem;
+}
+
+.footer-sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-branding {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.2);
+}
+
+/* ANIMACIONES */
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 10px rgba(160, 32, 240, 0.5), 0 0 20px rgba(160, 32, 240, 0.3); }
+    100% { text-shadow: 0 0 20px var(--neon-violet), 0 0 35px var(--bright-purple); }
+}
+
+@keyframes floatLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE NAVBAR GENERAL */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 1rem; }
+    .nav-links { gap: 0.8rem; font-size: 0.85rem; }
+    .section-padding { padding: 4rem 0 2rem 0; }
+    .hero { min-height: 55vh; padding-top: 3rem; } /* Ajustado en móviles */
+    .hero-logo { max-width: 320px; } /* Proporcionalmente más visible en pantallas pequeñas */
+}
