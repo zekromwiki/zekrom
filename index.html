@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIKI | Servidor Survival Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+   <header class="hero">
+        <div class="hero-content">
+            <div class="hero-logo-container">
+                <img src="imagenes/logozekrom.png" alt="Logo Zekrom" class="hero-logo">
+            </div>
+            <h1 class="neon-title">WIKI DEL SERVIDOR</h1>
+            <p class="hero-subtitle">Guía completa de comandos, mundos y armaduras especiales</p>
+        </div>
+    </header>
+
+    <nav class="navbar" id="main-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><i class="fa-solid fa-cube text-glow"></i> ZEKROM<span>WIKI</span></a>
+            <ul class="nav-links">
+                <li><a href="#comandos"><i class="fa-solid fa-terminal"></i> Comandos</a></li>
+                <li><a href="#warps"><i class="fa-solid fa-map-location-dot"></i> Warps</a></li>
+                <li><a href="#armaduras"><i class="fa-solid fa-shield-halved"></i> Armaduras</a></li>
+                <li><a href="#progresion"><i class="fa-solid fa-chart-line"></i> Crafteo de Armaduras</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section id="comandos" class="section-padding scroll-reveal">
+            <h2 class="section-title"><i class="fa-solid fa-terminal"></i> Comandos del Servidor</h2>
+            <div class="grid-commands">
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/spawn</span><i class="fa-solid fa-house-chimney cmd-icon"></i></div>
+                    <p class="cmd-desc">Te teletransporta automáticamente al Spawn o zona inicial del Survival.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/rtp</span><i class="fa-solid fa-shuffle cmd-icon"></i></div>
+                    <p class="cmd-desc">Abre el menú de mundos disponibles para teletransporte aleatorio.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/tpa</span><i class="fa-solid fa-user-plus cmd-icon"></i></div>
+                    <p class="cmd-desc">Envía una solicitud de teletransporte a otro jugador en el servidor.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/tpaccept</span><i class="fa-solid fa-check cmd-icon"></i></div>
+                    <p class="cmd-desc">Acepta una solicitud de teletransporte recibida recientemente.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/menu</span><i class="fa-solid fa-compass cmd-icon"></i></div>
+                    <p class="cmd-desc">Abre el menú interactivo principal del Survival con accesos rápidos.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/sethome</span><i class="fa-solid fa-location-dot"></i></div>
+                    <p class="cmd-desc">Establece tu hogar en la ubicación actual para regresar cuando quieras.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/delhome</span><i class="fa-solid fa-trash-can"></i></div>
+                    <p class="cmd-desc">Elimina de forma permanente el hogar seleccionado de tu lista.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/msg</span><i class="fa-solid fa-comment-dots"></i></div>
+                    <p class="cmd-desc">Envía mensajes privados encriptados y directos a otros jugadores conectados.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/perfil</span><i class="fa-solid fa-user-gear"></i></div>
+                    <p class="cmd-desc">Abre tu perfil personal donde puedes configurar las opciones del servidor.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/kits</span><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <p class="cmd-desc">Muestra las cajas de suministros y kits disponibles según tu rango actual.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/tiendaafk</span><i class="fa-solid fa-hourglass-half"></i></div>
+                    <p class="cmd-desc">Abre la tienda especial AFK donde se intercambian los valiosos Shards.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/comprar</span><i class="fa-solid fa-gem"></i></div>
+                    <p class="cmd-desc">Abre la tienda virtual premium del servidor que utiliza Gemas.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/regalo</span><i class="fa-solid fa-gift"></i></div>
+                    <p class="cmd-desc">Permite enviar regalos especiales a otros jugadores usando Gemas directas.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/shop</span><i class="fa-solid fa-cart-shopping"></i></div>
+                    <p class="cmd-desc">Accede a la tienda general de bloques, decoraciones y objetos del juego.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/ah</span><i class="fa-solid fa-gavel"></i></div>
+                    <p class="cmd-desc">Sistema de subastas globales en tiempo real entre todos los usuarios.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/warps</span><i class="fa-solid fa-map"></i></div>
+                    <p class="cmd-desc">Muestra de forma interactiva todos los mundos y localizaciones disponibles.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/quests</span><i class="fa-solid fa-scroll"></i></div>
+                    <p class="cmd-desc">Muestra los desafíos y las 9 misiones diarias con recompensas únicas.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/jobs</span><i class="fa-solid fa-briefcase"></i></div>
+                    <p class="cmd-desc">Sistema de profesiones y trabajos dinámicos para ganar dinero constante.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/protes</span><i class="fa-solid fa-shield"></i></div>
+                    <p class="cmd-desc">Menú avanzado de gestión para proteger tus terrenos y construcciones.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/money</span><i class="fa-solid fa-coins"></i></div>
+                    <p class="cmd-desc">Muestra en pantalla tu balance actual de dinero en la economía general.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/gemas</span><i class="fa-solid fa-diamond"></i></div>
+                    <p class="cmd-desc">Muestra la cantidad exacta de gemas premium que posees en tu monedero.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/shard balance</span><i class="fa-solid fa-shuttle-space"></i></div>
+                    <p class="cmd-desc">Muestra la cantidad total de Shards obtenidos mediante actividad AFK.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/coinflip</span><i class="fa-solid fa-circle-dollar-to-slot"></i></div>
+                    <p class="cmd-desc">Sistema de apuestas cara o cruz instantáneas usando el dinero del juego.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/ttt</span><i class="fa-solid fa-sword"></i></div>
+                    <p class="cmd-desc">Duelos rápidos e intensos contra otros jugadores apostando tus fondos.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/rps</span><i class="fa-solid fa-hand-fist"></i></div>
+                    <p class="cmd-desc">El clásico Piedra, Papel o Tijera integrado con apuestas monetarias.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/bounties</span><i class="fa-solid fa-crosshairs"></i></div>
+                    <p class="cmd-desc">Coloca recompensas de oro sobre las cabezas de tus peores enemigos.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/recompensa</span><i class="fa-solid fa-calendar-check"></i></div>
+                    <p class="cmd-desc">Abre el menú interactivo para reclamar tus valiosas recompensas semanales.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/clan</span><i class="fa-solid fa-flag"></i></div>
+                    <p class="cmd-desc">Sistema integral de clanes, alianzas tácticas y guerras de equipos.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/psmenu</span><i class="fa-solid fa-sliders"></i></div>
+                    <p class="cmd-desc">Configuración fina y permisos avanzados de tus bloques de protección.</p>
+                </div>
+                <div class="card-command">
+                    <div class="cmd-header"><span class="cmd-name">/tags</span><i class="fa-solid fa-tags"></i></div>
+                    <p class="cmd-desc">Personaliza y estiliza el tag visual de tu nombre sobre tu personaje.</p>
+                </div>
+            </div>
+        </section>
+
+<section id="warps" class="section-padding scroll-reveal">
+            <h2 class="section-title"><i class="fa-solid fa-map-location-dot"></i> Warps y Mundos</h2>
+            <div class="grid-warps">
+                <div class="card-warp">
+                    <div class="warp-img-wrapper">
+                        <div class="warp-placeholder-img">
+                            <img src="imagenes/mundos.png" alt="Mundos">
+                        </div>
+                    </div>
+                    <div class="warp-body">
+                        <h3>/Warp Mundos</h3>
+                        <p>Zonas principales y de exploración libre del servidor:</p>
+                        <ul class="warp-tags">
+                            <li><i class="fa-solid fa-tree"></i> Overworld</li>
+                            <li><i class="fa-solid fa-fire"></i> Nether</li>
+                            <li><i class="fa-solid fa-moon"></i> End</li>
+                            <li><i class="fa-solid fa-pickaxe"></i> Recursos <small>(Minería)</small></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-warp">
+                    <div class="warp-img-wrapper">
+                        <div class="warp-placeholder-img">
+                            <img src="imagenes/jefes.png" alt="Jefes">
+                        </div>
+                    </div>
+                    <div class="warp-body">
+                        <h3>/Warp Jefes</h3>
+                        <p>Zona de combate extremo contra poderosos Bosses globales que emergen periódicamente.</p>
+                        <div class="warp-highlight">
+                            <i class="fa-solid fa-skull-crossbones"></i> Drop: <strong>Fragmentos Qubit</strong> para crafteos especiales de armaduras.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-warp">
+                    <div class="warp-img-wrapper">
+                        <div class="warp-placeholder-img">
+                            <img src="imagenes/afk.png" alt="AFK">
+                        </div>
+                    </div>
+                    <div class="warp-body">
+                        <h3>/Warp AFK</h3>
+                        <p>Espacio seguro habilitado donde los usuarios pueden quedarse inactivos generando recursos pasivos.</p>
+                        <div class="warp-highlight">
+                            <i class="fa-solid fa-hourglass"></i> Generación constante de <strong>Shards</strong> para la tienda exclusiva.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-warp">
+                    <div class="warp-img-wrapper">
+                        <div class="warp-placeholder-img">
+                            <img src="imagenes/tops.png" alt="Tops">
+                        </div>
+                    </div>
+                    <div class="warp-body">
+                        <h3>/Warp Tops</h3>
+                        <p>El salón de la fama. Consulta las clasificaciones globales en tiempo real del servidor en categorías como:</p>
+                        <div class="tops-grid">
+                            <span><i class="fa-solid fa-coins"></i> Dinero</span>
+                            <span><i class="fa-solid fa-pickaxe"></i> Minería</span>
+                            <span><i class="fa-solid fa-fish"></i> Pesca</span>
+                            <span><i class="fa-solid fa-clock"></i> Viciados</span>
+                            <span><i class="fa-solid fa-skull"></i> Kills</span>
+                            <span><i class="fa-solid fa-gem"></i> Gemas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="armaduras" class="section-padding scroll-reveal">
+            <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i> Crafteo de Armaduras Especiales</h2>
+            <div class="grid-armors">
+                <div class="card-armor tier-dragon">
+                    <div class="armor-img-box">
+                        <img src="imagenes/Armaduradragon.png" alt="Armadura Dragón" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="img-fallback"><i class="fa-solid fa-dragon-fire"></i></div>
+                    </div>
+                    <div class="armor-info">
+                        <span class="rarity legendaria">RARA</span>
+                        <h3>Armadura Dragón</h3>
+                        <p class="obtencion"><strong>Obtención:</strong> 1 Cubo Qubit → 1 Fragmento Dragón. Requieres 16 fragmentos por pieza.</p>
+                    </div>
+                </div>
+                <div class="card-armor tier-hielo">
+                    <div class="armor-img-box">
+                        <img src="imagenes/Armadurahielo.png" alt="Armadura Hielo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="img-fallback"><i class="fa-solid fa-snowflake"></i></div>
+                    </div>
+                    <div class="armor-info">
+                        <span class="rarity mitica">RARA</span>
+                        <h3>Armadura Hielo</h3>
+                        <p class="obtencion"><strong>Obtención:</strong> 1 Cubo Qubit + 2 Frag. Dragón → 1 Frag. Hielo. Requieres 16 fragmentos + pieza Dragón.</p>
+                    </div>
+                </div>
+                <div class="card-armor tier-molten">
+                    <div class="armor-img-box">
+                        <img src="imagenes/Armaduramolten.png" alt="Armadura Molten" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="img-fallback"><i class="fa-solid fa-volcano"></i></div>
+                    </div>
+                    <div class="armor-info">
+                        <span class="rarity ancestral">RARA</span>
+                        <h3>Armadura Molten</h3>
+                        <p class="obtencion"><strong>Obtención:</strong> 1 Cubo Qubit + 3 Frag. Hielo → 1 Frag. Molten. Requieres 16 fragmentos + pieza Hielo.</p>
+                    </div>
+                </div>
+                <div class="card-armor tier-sakura">
+                    <div class="armor-img-box">
+                        <img src="imagenes/Armadurasakura.png" alt="Armadura Sakura" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="img-fallback"><i class="fa-solid fa-seedling"></i></div>
+                    </div>
+                    <div class="armor-info">
+                        <span class="rarity divina">EPICA</span>
+                        <h3>Armadura Sakura</h3>
+                        <p class="obtencion"><strong>Obtención:</strong> 1 Cubo Qubit + 3 Frag. Molten → 1 Frag. Sakura. Requieres 16 fragmentos + pieza Molten.</p>
+                    </div>
+                </div>
+                <div class="card-armor tier-arruinado">
+                    <div class="armor-img-box">
+                        <img src="imagenes/Armaduraarruinado.png" alt="Armadura Arruinado" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="img-fallback"><i class="fa-solid fa-skull-ghost"></i></div>
+                    </div>
+                    <div class="armor-info">
+                        <span class="rarity celestial">LEGENDARIA</span>
+                        <h3>Armadura Arruinado</h3>
+                        <p class="obtencion"><strong>Obtención:</strong> 1 Cubo Qubit + 6 Frag. Sakura → 1 Frag. Arruinado. Requieres 16 fragmentos + pieza Sakura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="progresion" class="section-padding scroll-reveal">
+            <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Crafteo de Armaduras especiales </h2>
+            <div class="timeline">
+                <div class="timeline-item base">
+                    <div class="timeline-badge"><i class="fa-solid fa-gem"></i></div>
+                    <div class="timeline-content">
+                        <h4>Material Base: Fragmento Qubit</h4>
+                        <p>Obtenido derrotando a los Bosses globales en el Warp Jefes. <strong>6 Fragmentos Qubit = 1 Cubo Qubit.</strong></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fa-solid fa-dragon"></i></div>
+                    <div class="timeline-content">
+                        <h4>Armadura Dragón</h4>
+                        <p>Crea 1 Fragmento Dragón usando 1 Cubo Qubit. Junta 16 Fragmentos de este tipo para forjar cualquier pieza.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fa-solid fa-snowflake"></i></div>
+                    <div class="timeline-content">
+                        <h4>Armadura Hielo</h4>
+                        <p>1 Cubo Qubit + 2 Frag. Dragón fluidos crean 1 Fragmento de Hielo. Requiere 16 Frag. Hielo emparejados con la pieza Dragón homóloga.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fa-solid fa-volcano"></i></div>
+                    <div class="timeline-content">
+                        <h4>Armadura Molten</h4>
+                        <p>1 Cubo Qubit + 3 Frag. Hielo transmutan en 1 Fragmento Molten. Junta 16 unidades e infúndelas sobre tu pieza de Hielo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="timeline-content">
+                        <h4>Armadura Sakura</h4>
+                        <p>1 Cubo Qubit + 3 Frag. Molten condensan en 1 Fragmento Sakura. Forja final con 16 Fragmentos Sakura más tu pieza Molten previa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item max">
+                    <div class="timeline-badge"><i class="fa-solid fa-skull"></i></div>
+                    <div class="timeline-content">
+                        <h4>Armadura Arruinado</h4>
+                        <p>El cenit del servidor. 1 Cubo Qubit + 6 Frag. Sakura forjan 1 Fragmento Arruinado. Fusiona 16 fragmentos con tu pieza Sakura para heredar el poder supremo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" title="Volver al inicio"><i class="fa-solid fa-angles-up"></i></button>
+
+    <footer class="neon-footer">
+        <p class="footer-title">Wiki Oficial del Survival</p>
+        <p class="footer-sub">Actualizado constantemente con las últimas novedades del servidor.</p>
+        <div class="footer-branding">&copy; 2026 Minecraft Survival Server - Todos los derechos reservados.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
